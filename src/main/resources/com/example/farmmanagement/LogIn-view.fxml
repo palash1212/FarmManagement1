@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="734.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.farmmanagement.LogInController">
+  <tabs>
+    <Tab text="Log in">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="Label1" alignment="CENTER" prefHeight="95.0" prefWidth="734.0" style="-fx-background-color: tan;" text="Online Farm Management System">
+                     <font>
+                        <Font name="System Bold Italic" size="35.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="Anchorpane1" layoutY="95.0" prefHeight="469.0" prefWidth="251.0" style="-fx-background-color: silver;" />
+                  <AnchorPane fx:id="Anchorpane2" layoutX="250.0" layoutY="95.0" prefHeight="468.0" prefWidth="486.0" style="-fx-background-color: beige;">
+                     <children>
+                        <Label fx:id="Label2" layoutX="49.0" layoutY="95.0" prefHeight="39.0" prefWidth="75.0" text="User Name :">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="Label3" layoutX="50.0" layoutY="173.0" prefHeight="35.0" prefWidth="73.0" text="Password   :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TextField1" layoutX="141.0" layoutY="92.0" prefHeight="40.0" prefWidth="205.0" />
+                        <PasswordField fx:id="PassField1" layoutX="141.0" layoutY="170.0" prefHeight="39.0" prefWidth="205.0" />
+                        <Label fx:id="Label4" layoutX="133.0" layoutY="226.0" prefHeight="23.0" prefWidth="229.0" text="Label" />
+                        <Button fx:id="LoginButton" layoutX="186.0" layoutY="260.0" mnemonicParsing="false" onAction="#LoginButtonClick" prefHeight="42.0" prefWidth="123.0" style="-fx-background-color: lightgreen;" text="Log in">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Sign up">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="Label5" alignment="CENTER" prefHeight="95.0" prefWidth="734.0" style="-fx-background-color: tan;" text="Online Farm Management System">
+                     <font>
+                        <Font name="System Bold Italic" size="35.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="Anchorpane3" layoutY="95.0" prefHeight="468.0" prefWidth="253.0" style="-fx-background-color: silver;" />
+                  <AnchorPane fx:id="Anchorpane4" layoutX="251.0" layoutY="95.0" prefHeight="468.0" prefWidth="484.0" style="-fx-background-color: beige;">
+                     <children>
+                        <Label fx:id="Label6" layoutX="75.0" layoutY="143.0" prefHeight="37.0" prefWidth="83.0" text="First Name :" />
+                        <Label fx:id="Label7" layoutX="75.0" layoutY="180.0" prefHeight="37.0" prefWidth="83.0" text="Last Name :" />
+                        <Label fx:id="Label8" layoutX="75.0" layoutY="215.0" prefHeight="37.0" prefWidth="83.0" text="User Name : " />
+                        <Label fx:id="Label9" layoutX="75.0" layoutY="252.0" prefHeight="37.0" prefWidth="83.0" text="Password   :" />
+                        <TextField fx:id="TextField2" layoutX="152.0" layoutY="149.0" prefHeight="25.0" prefWidth="269.0" />
+                        <TextField fx:id="TextField3" layoutX="152.0" layoutY="186.0" prefHeight="25.0" prefWidth="269.0" />
+                        <TextField fx:id="TextField4" layoutX="152.0" layoutY="222.0" prefHeight="25.0" prefWidth="268.0" />
+                        <PasswordField fx:id="PassField2" layoutX="152.0" layoutY="258.0" prefHeight="25.0" prefWidth="268.0" />
+                        <Button fx:id="SignupButton" layoutX="229.0" layoutY="313.0" mnemonicParsing="false" onAction="#SignupButtonClick" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: lightgreen;" text="Sign up" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
