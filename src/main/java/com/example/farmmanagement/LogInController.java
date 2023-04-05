@@ -13,7 +13,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.File;
+import java.io.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class LogInController {
 
@@ -63,6 +67,8 @@ public class LogInController {
 
     @FXML
     private Label Label9;
+    @FXML
+    private Label Label10;
 
     @FXML
     private Button LoginButton;
@@ -88,22 +94,88 @@ public class LogInController {
     @FXML
     private TextField TextField4;
 
+    ArrayList<String>allUsername = new ArrayList<>();
+    HashMap<String,String>usernameandpass = new HashMap<String,String>();
+
     @FXML
     void LoginButtonClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Catagory.class.getResource("Catagory-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        String username = TextField1.getText();
+        String password = String.valueOf(PassField1.getText());
+
+        File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/Register");
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+
+            Object[] lines = br.lines().toArray();
+            for(int i=0; i<lines.length; i++){
+                String[] row = lines[i].toString().split(": ");
+                if(row[0].equals("UserName ")){
+                    username = row[1];
+                    allUsername.add(username);
+                }
+                else if(row[0].equals("Password ")){
+                    password = row[1];
+                }
+                if(!username.equals("")&& !password.equals("")){
+                    usernameandpass.put(username,password);
+                }
+            }
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        for(String uname : usernameandpass.keySet()){
+            if(uname.equals(username)){
+                if(usernameandpass.get(uname).equals(password)){
+                    root = FXMLLoader.load(Catagory.class.getResource("Catagory-view.fxml"));
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
+            }
+        }
+//        root = FXMLLoader.load(Catagory.class.getResource("Catagory-view.fxml"));
+//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        scene = new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
     }
 
     @FXML
     void SignupButtonClick(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Catagory.class.getResource("Catagory-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        String Fname = TextField2.getText();
+        String Uname = TextField4.getText();
+        String Email = TextField3.getText();
+        String pass = String.valueOf(PassField2.getText());
+
+        File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/Register");
+
+        if (Fname.equals("") || Email.equals("") || Uname.equals("") || pass.equals("")) {
+            Label10.setText("Something went wrong!!Please try again");
+        }
+        else {
+            try {
+                FileWriter fw = new FileWriter(file, true);
+                fw.write("FullName : " + Fname);
+                fw.write("\nEmail : " + Email);
+                fw.write("\nUserName : " + Uname);
+                fw.write("\nPassword : " + pass);
+                fw.write("\n----------\n");
+                fw.close();
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+
+            root = FXMLLoader.load(Catagory.class.getResource("Catagory-view.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
 }

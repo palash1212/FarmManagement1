@@ -10,6 +10,9 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class FRecordController {
@@ -100,20 +103,38 @@ public class FRecordController {
     @FXML
     void SubmitButtonAction(ActionEvent event) {
 
+        String date = TF1.getText();
         double E = Double.parseDouble(TF2.getText());
         double W = Double.parseDouble(TF3.getText());
         double S = Double.parseDouble(TF4.getText());
         double F = Double.parseDouble(TF5.getText());
         double O = Double.parseDouble(TF6.getText());
 
-        if(E>0 || W>0 || S>0 || F>0 || O>0 ){
+//        if(E>0 || W>0 || S>0 || F>0 || O>0 ){
             double T = E+W+S+F+O;
             TF7.setText(String.valueOf(T));
 
-            TF7.setText(String.valueOf(T));
-        }
-       else
-           Err.setText("Invalid Data!!please try again");
+
+//        }
+//       else{
+//            Err.setText("Invalid Data!!please try again");
+//        }
+
+       File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/FinRecord");
+       try{
+           FileWriter fw = new FileWriter(file,true);
+           fw.write("Date : " +date);
+           fw.write("\nElectricity Bill : "+E+" Taka");
+           fw.write("\nWater Bill : "+W+" Taka");
+           fw.write("\nStuff Salary : "+S+" Taka");
+           fw.write("\nFood Cost : "+F+" Taka");
+           fw.write("\nOther Cost : "+O+" Taka");
+           fw.write("\nTotal Cost : "+T+" Taka");
+           fw.write("\n\n");
+           fw.close();
+       }catch (Exception e){
+           System.out.println(e);
+       }
 
     }
 

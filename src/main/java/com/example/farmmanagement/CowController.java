@@ -59,7 +59,7 @@ public class CowController {
 
     @FXML
     void FoodButtonAction(ActionEvent event)  throws IOException {
-        root = FXMLLoader.load(CowFood.class.getResource("CowFood.fxml"));
+        root = FXMLLoader.load(Cow.class.getResource("CowFood2.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

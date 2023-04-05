@@ -9,15 +9,13 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextArea;
+import  javafx.scene.control.TextField;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CowHealthController2 {
-
+public class GoatFoodController2 {
     @FXML
     public Stage stage;
 
@@ -26,8 +24,6 @@ public class CowHealthController2 {
 
     @FXML
     public Parent root;
-
-
     @FXML
     private Button BackButton;
 
@@ -51,14 +47,14 @@ public class CowHealthController2 {
 
     @FXML
     private Label L6;
+
     @FXML
     private Label L7;
+    @FXML
+    private Label L8;
 
     @FXML
     private Button SubmitButton;
-
-    @FXML
-    private TextArea TA1;
 
     @FXML
     private TextField TF1;
@@ -70,9 +66,15 @@ public class CowHealthController2 {
     private TextField TF3;
 
     @FXML
-    void BackButtonAction(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(CowHealth2.class.getResource("CowHealth.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    private TextField TF4;
+
+    @FXML
+    private TextField TF5;
+
+    @FXML
+    void BackButtonAction(ActionEvent event)  throws IOException {
+        root = FXMLLoader.load(GoatFood2.class.getResource("GoatFood.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -85,24 +87,27 @@ public class CowHealthController2 {
 
     @FXML
     void SubmitButtonAction(ActionEvent event)  throws IOException{
-        String code = TF1.getText();
-        String date = TF2.getText();
-        String nextdate= TF3.getText();
-        String des = TA1.getText();
-        File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/CowHealth");
+        String g = TF1.getText();
+        String h = TF2.getText();
+        String s= TF3.getText();
+        String b= TF4.getText();
+        String l= TF5.getText();
 
-        if (code.equals("") || date.equals("") || nextdate.equals("") || des.equals("")) {
-            L7.setText("Something went wrong!!Please try again");
+        File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/GoatFood");
+
+        if (g.equals("") || h.equals("") || s.equals("") || b.equals("") || l.equals("")) {
+            L8.setText("Something went wrong!!Please try again");
         }
         else {
             FileWriter fw = new FileWriter(file, true);
-            fw.write("Code : " + code + "\n");
-            fw.write("Date : " + date + "\n");
-            fw.write("Next Date : " + nextdate + "\n");
-            fw.write("Description : "+des+"\n");
+            fw.write("Grass : " + g + "\n");
+            fw.write("Hay : " + h + "\n");
+            fw.write("Silage : " + s + "\n");
+            fw.write("Bran : " + b + " kg\n");
+            fw.write("Legumes : " + l + "\n");
             fw.write("--------\n");
             fw.close();
-            L7.setText("Submission has Completed");
+            L8.setText("Submission has Completed");
         }
 
     }

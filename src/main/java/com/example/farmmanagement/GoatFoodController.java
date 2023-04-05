@@ -25,6 +25,8 @@ public class GoatFoodController {
 
     @FXML
     private Button ExitButton;
+    @FXML
+    private Button NextButton;
 
     @FXML
     private Label GoatFoodLabel;
@@ -32,7 +34,7 @@ public class GoatFoodController {
     @FXML
     void BackButtonAction(ActionEvent event) throws IOException {
         root = FXMLLoader.load(GoatFood.class.getResource("Goat.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -43,4 +45,12 @@ public class GoatFoodController {
         System.exit(0);
     }
 
+    @FXML
+    void NextButtonAction(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(GoatFood.class.getResource("GoatFood2.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

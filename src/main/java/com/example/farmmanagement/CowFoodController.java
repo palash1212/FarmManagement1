@@ -29,10 +29,12 @@ public class CowFoodController {
 
     @FXML
     private Button ExitButton;
+    @FXML
+    private Button NextButton;
 
     @FXML
     void BackButtonAction(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(CowFood.class.getResource("Cow.fxml"));
+        root = FXMLLoader.load(CowFood.class.getResource("CowFood2.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

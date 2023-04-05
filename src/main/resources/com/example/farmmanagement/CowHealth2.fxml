@@ -32,8 +32,9 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="SubmitButton" layoutX="468.0" layoutY="474.0" mnemonicParsing="false" onAction="#SubmitButtonAction" prefHeight="34.0" prefWidth="73.0" style="-fx-background-color: green;" text="Submit" textFill="#efeeee" />
+      <Button fx:id="SubmitButton" layoutX="468.0" layoutY="481.0" mnemonicParsing="false" onAction="#SubmitButtonAction" prefHeight="34.0" prefWidth="73.0" style="-fx-background-color: green;" text="Submit" textFill="#efeeee" />
       <Button fx:id="BackButton" layoutX="413.0" layoutY="539.0" mnemonicParsing="false" onAction="#BackButtonAction" prefHeight="34.0" prefWidth="73.0" style="-fx-background-color: lightgreen;" text="Back" />
       <Button fx:id="ExitButton" layoutX="517.0" layoutY="539.0" mnemonicParsing="false" onAction="#ExitButtonAction" prefHeight="34.0" prefWidth="73.0" style="-fx-background-color: red;" text="Exit" />
+      <Label fx:id="L7" layoutX="383.0" layoutY="456.0" prefHeight="17.0" prefWidth="225.0" />
    </children>
 </AnchorPane>

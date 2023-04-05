@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="718.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.farmmanagement.GoatFoodController">
    <children>
       <Label fx:id="GoatFoodLabel" alignment="CENTER" prefHeight="89.0" prefWidth="718.0" style="-fx-background-color: tan;" text="Food (Goat)">
@@ -14,7 +13,8 @@
          </font>
       </Label>
       <AnchorPane layoutY="89.0" prefHeight="508.0" prefWidth="242.0" style="-fx-background-color: silver;" />
-      <Button fx:id="BackButton" layoutX="399.0" layoutY="488.0" mnemonicParsing="false" onAction="#BackButtonAction" prefHeight="33.0" prefWidth="76.0" style="-fx-background-color: lightgreen;" text="Back" />
-      <Button fx:id="ExitButton" layoutX="497.0" layoutY="488.0" mnemonicParsing="false" onAction="#ExitButtonAction" prefHeight="33.0" prefWidth="76.0" style="-fx-background-color: red;" text="Exit" />
+      <Button fx:id="BackButton" layoutX="342.0" layoutY="488.0" mnemonicParsing="false" onAction="#BackButtonAction" prefHeight="33.0" prefWidth="76.0" style="-fx-background-color: lightgreen;" text="Back" />
+      <Button fx:id="ExitButton" layoutX="444.0" layoutY="488.0" mnemonicParsing="false" onAction="#ExitButtonAction" prefHeight="33.0" prefWidth="76.0" style="-fx-background-color: red;" text="Exit" />
+      <Button fx:id="NextButton" layoutX="548.0" layoutY="488.0" mnemonicParsing="false" onAction="#NextButtonAction" prefHeight="33.0" prefWidth="76.0" text="Next" />
    </children>
 </AnchorPane>
