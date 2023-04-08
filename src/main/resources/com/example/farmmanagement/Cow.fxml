@@ -20,7 +20,7 @@
       <Button fx:id="BackButton" layoutX="407.0" layoutY="500.0" mnemonicParsing="false" onAction="#BackButtonAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: lightgreen;" text="Back" />
       <Button fx:id="ExitButton" layoutX="533.0" layoutY="500.0" mnemonicParsing="false" onAction="#ExitButtonAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: red;" text="Exit" />
       <AnchorPane layoutY="93.0" prefHeight="495.0" prefWidth="236.0" style="-fx-background-color: silver;" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="407.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Image2" fitHeight="150.0" fitWidth="200.0" layoutX="407.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../../Pictures/Screenshots/cow.png" />
          </image>

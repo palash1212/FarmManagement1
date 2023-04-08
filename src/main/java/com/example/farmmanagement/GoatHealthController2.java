@@ -11,6 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
+
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class GoatHealthController2 {
@@ -47,6 +50,8 @@ public class GoatHealthController2 {
 
     @FXML
     private Label L6;
+    @FXML
+    private Label L7;
 
     @FXML
     private Button SubmitButton;
@@ -78,8 +83,26 @@ public class GoatHealthController2 {
     }
 
     @FXML
-    void SubmitButtonAction(ActionEvent event) {
+    void SubmitButtonAction(ActionEvent event)  throws IOException{
+        String code = TF1.getText();
+        String date = TF2.getText();
+        String nextdate= TF3.getText();
+        String des = TA1.getText();
+        File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/GoatHealth");
+
+        if (code.equals("") || date.equals("") || nextdate.equals("") || des.equals("")) {
+            L7.setText(" Something went wrong!!Please try again");
+        }
+        else {
+            FileWriter fw = new FileWriter(file, true);
+            fw.write("Code : " + code + "\n");
+            fw.write("Date : " + date + "\n");
+            fw.write("Next Date : " + nextdate + "\n");
+            fw.write("Description : "+des+"\n");
+            fw.write("--------\n");
+            fw.close();
+            L7.setText("      Submission has Completed");
+        }
 
     }
-
 }

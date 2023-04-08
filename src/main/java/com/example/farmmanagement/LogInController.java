@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -18,6 +20,7 @@ import java.io.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class LogInController {
 
@@ -29,17 +32,7 @@ public class LogInController {
 
     @FXML
     public Parent root;
-    @FXML
-    private AnchorPane Anchorpane1;
 
-    @FXML
-    private AnchorPane Anchorpane2;
-
-    @FXML
-    private AnchorPane Anchorpane3;
-
-    @FXML
-    private AnchorPane Anchorpane4;
 
     @FXML
     private Label Label1;
@@ -94,54 +87,42 @@ public class LogInController {
     @FXML
     private TextField TextField4;
 
+    @FXML
+    ImageView Image1;
+
+//    Image image1 = new Image(getClass().getResourceAsStream("signup.png"));
+//    public void displayImage1(){
+//        Image1.setImage(image1);
+//    }
+
     ArrayList<String>allUsername = new ArrayList<>();
-    HashMap<String,String>usernameandpass = new HashMap<String,String>();
+    ArrayList<String> allpass=new ArrayList<>();
+
 
     @FXML
     void LoginButtonClick(ActionEvent event) throws IOException {
+        File fl=new File("src/main/java/com/example/farmmanagement/name_pass");
+        Scanner sn=new Scanner(fl);
 
-        String username = TextField1.getText();
-        String password = String.valueOf(PassField1.getText());
+        while (sn.hasNext()){
+            String name=sn.next();
+            String pas=sn.next();
+//            System.out.println(name);
+//            System.out.println(pas);
 
-        File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/Register");
-        try {
-            FileReader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(fr);
+            if(name.equals(TextField1.getText()) && pas.equals(PassField1.getText()) ){
+                root = FXMLLoader.load(Catagory.class.getResource("Catagory-view.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
 
-            Object[] lines = br.lines().toArray();
-            for(int i=0; i<lines.length; i++){
-                String[] row = lines[i].toString().split(": ");
-                if(row[0].equals("UserName ")){
-                    username = row[1];
-                    allUsername.add(username);
-                }
-                else if(row[0].equals("Password ")){
-                    password = row[1];
-                }
-                if(!username.equals("")&& !password.equals("")){
-                    usernameandpass.put(username,password);
-                }
             }
-
-        }catch (Exception e){
-            System.out.println(e);
-        }
-        for(String uname : usernameandpass.keySet()){
-            if(uname.equals(username)){
-                if(usernameandpass.get(uname).equals(password)){
-                    root = FXMLLoader.load(Catagory.class.getResource("Catagory-view.fxml"));
-                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                    scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
-                }
+            else{
+                Label4.setText("Wrong PassWord!!Please Try again");
             }
         }
-//        root = FXMLLoader.load(Catagory.class.getResource("Catagory-view.fxml"));
-//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
+
     }
 
     @FXML
@@ -151,20 +132,26 @@ public class LogInController {
         String Uname = TextField4.getText();
         String Email = TextField3.getText();
         String pass = String.valueOf(PassField2.getText());
-
-        File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/Register");
+          allUsername.add(Uname);
+           allpass.add(pass);
 
         if (Fname.equals("") || Email.equals("") || Uname.equals("") || pass.equals("")) {
             Label10.setText("Something went wrong!!Please try again");
         }
         else {
             try {
+                File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/Register");
                 FileWriter fw = new FileWriter(file, true);
                 fw.write("FullName : " + Fname);
                 fw.write("\nEmail : " + Email);
                 fw.write("\nUserName : " + Uname);
                 fw.write("\nPassword : " + pass);
                 fw.write("\n----------\n");
+                File file2 = new File("src/main/java/com/example/farmmanagement/name_pass");
+                FileWriter fw2 = new FileWriter(file2, true);
+                fw2.write(Uname+" ");
+                fw2.write(pass+"\n");
+                fw2.close();
                 fw.close();
             } catch (IOException e) {
                 System.out.println(e);
@@ -179,3 +166,4 @@ public class LogInController {
     }
 
 }
+

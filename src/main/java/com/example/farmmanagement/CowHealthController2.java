@@ -84,7 +84,7 @@ public class CowHealthController2 {
     }
 
     @FXML
-    void SubmitButtonAction(ActionEvent event)  throws IOException{
+    void SubmitButtonAction(ActionEvent event) throws IOException{
         String code = TF1.getText();
         String date = TF2.getText();
         String nextdate= TF3.getText();
@@ -92,7 +92,7 @@ public class CowHealthController2 {
         File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/CowHealth");
 
         if (code.equals("") || date.equals("") || nextdate.equals("") || des.equals("")) {
-            L7.setText("Something went wrong!!Please try again");
+            L7.setText(" Something went wrong!!Please try again");
         }
         else {
             FileWriter fw = new FileWriter(file, true);
@@ -102,7 +102,7 @@ public class CowHealthController2 {
             fw.write("Description : "+des+"\n");
             fw.write("--------\n");
             fw.close();
-            L7.setText("Submission has Completed");
+            L7.setText("     Submission has Completed");
         }
 
     }
