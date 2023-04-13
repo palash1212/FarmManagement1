@@ -14,6 +14,7 @@ import  javafx.scene.control.TextField;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GoatFoodController2 {
     @FXML
@@ -52,6 +53,8 @@ public class GoatFoodController2 {
     private Label L7;
     @FXML
     private Label L8;
+    @FXML
+    private Label CodeLabel;
 
     @FXML
     private Button SubmitButton;
@@ -70,6 +73,10 @@ public class GoatFoodController2 {
 
     @FXML
     private TextField TF5;
+    @FXML
+    private TextField TF6;
+
+    ArrayList<String>allcode = new ArrayList<>();
 
     @FXML
     void BackButtonAction(ActionEvent event)  throws IOException {
@@ -87,25 +94,23 @@ public class GoatFoodController2 {
 
     @FXML
     void SubmitButtonAction(ActionEvent event)  throws IOException{
+        String c = TF6.getText();
         String g = TF1.getText();
         String h = TF2.getText();
         String s= TF3.getText();
         String b= TF4.getText();
         String l= TF5.getText();
 
-        File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/GoatFood");
+        allcode.add(c);
 
-        if (g.equals("") || h.equals("") || s.equals("") || b.equals("") || l.equals("")) {
+        File file = new File("src/main/java/com/example/farmmanagement/GoatFood");
+
+        if (c.equals("") ||g.equals("") || h.equals("") || s.equals("") || b.equals("") || l.equals("")) {
             L8.setText("Something went wrong!!Please try again");
         }
         else {
             FileWriter fw = new FileWriter(file, true);
-            fw.write("Grass : " + g + "\n");
-            fw.write("Hay : " + h + "\n");
-            fw.write("Silage : " + s + "\n");
-            fw.write("Bran : " + b + " kg\n");
-            fw.write("Legumes : " + l + "\n");
-            fw.write("--------\n");
+            fw.write(c+" "+g+" "+h+" "+s+" "+b+" "+l+"\n");
             fw.close();
             L8.setText("Submission has Completed");
         }

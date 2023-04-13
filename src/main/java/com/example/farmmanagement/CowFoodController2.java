@@ -14,6 +14,7 @@ import  javafx.scene.control.TextField;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CowFoodController2 {
     @FXML
@@ -55,6 +56,8 @@ public class CowFoodController2 {
     private Label L7;
     @FXML
     private Label L8;
+    @FXML
+    private Label L9;
 
     @FXML
     private Button SubmitButton;
@@ -73,6 +76,10 @@ public class CowFoodController2 {
 
     @FXML
     private TextField TF5;
+    @FXML
+    private TextField TF6;
+
+    ArrayList<String>codenumber = new ArrayList<>();
 
     @FXML
     void BackButtonAction(ActionEvent event)  throws IOException {
@@ -90,25 +97,28 @@ public class CowFoodController2 {
 
     @FXML
     void SubmitButtonAction(ActionEvent event) throws IOException{
+        String c = TF6.getText();
         String g = TF1.getText();
         String h = TF2.getText();
         String s= TF3.getText();
         String b= TF4.getText();
         String m= TF5.getText();
 
+        codenumber.add(c);
         File file = new File("C:/Users/User/IdeaProjects/FarmManagement/src/main/java/com/example/farmmanagement/CowFood");
 
-        if (g.equals("") || h.equals("") || s.equals("") || b.equals("") || m.equals("")) {
+        if (c.equals("") ||g.equals("") || h.equals("") || s.equals("") || b.equals("") || m.equals("")) {
             L8.setText("Something went wrong!!Please try again");
         }
         else {
             FileWriter fw = new FileWriter(file, true);
-            fw.write("Grass : " + g + "\n");
-            fw.write("Hay : " + h + "\n");
-            fw.write("Silage : " + s + "\n");
-            fw.write("Bran : " + b + " kg\n");
-            fw.write("Molasses : " + m + "\n");
-            fw.write("--------\n");
+//            fw.write("Grass : " + g + "\n");
+//            fw.write("Hay : " + h + "\n");
+//            fw.write("Silage : " + s + "\n");
+//            fw.write("Bran : " + b + " kg\n");
+//            fw.write("Molasses : " + m + "\n");
+//            fw.write("--------\n");
+            fw.write(c+" "+g+" "+h+" "+s+" "+b+" "+m+"\n");
             fw.close();
             L8.setText("Submission has Completed");
         }

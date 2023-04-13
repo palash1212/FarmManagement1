@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class FRecord extends Application {
+public class FRecord2 extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -15,9 +15,9 @@ public class FRecord extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(FRecord.class.getResource("FRecord.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(FRecord2.class.getResource("FRecord2.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Financial Record");
+        stage.setTitle("Financial Details");
         stage.setScene(scene);
         stage.show();
     }

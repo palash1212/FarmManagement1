@@ -22,16 +22,18 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="L3" layoutX="356.0" layoutY="214.0" prefHeight="27.0" prefWidth="78.0" text="Grass" />
-      <Label fx:id="L4" layoutX="356.0" layoutY="275.0" prefHeight="27.0" prefWidth="60.0" text="Hay" />
-      <Label fx:id="L5" layoutX="356.0" layoutY="329.0" prefHeight="27.0" prefWidth="60.0" text="Silage" />
-      <Label fx:id="L6" layoutX="356.0" layoutY="385.0" prefHeight="27.0" prefWidth="60.0" text="Bran" />
+      <Label fx:id="L3" layoutX="356.0" layoutY="254.0" prefHeight="27.0" prefWidth="78.0" text="Grass" />
+      <Label fx:id="L4" layoutX="356.0" layoutY="301.0" prefHeight="27.0" prefWidth="60.0" text="Hay" />
+      <Label fx:id="L5" layoutX="356.0" layoutY="346.0" prefHeight="27.0" prefWidth="60.0" text="Silage" />
+      <Label fx:id="L6" layoutX="356.0" layoutY="392.0" prefHeight="27.0" prefWidth="60.0" text="Bran" />
       <Label fx:id="L7" layoutX="356.0" layoutY="436.0" prefHeight="27.0" prefWidth="60.0" text="Legumes" />
-      <TextField fx:id="TF1" layoutX="454.0" layoutY="215.0" prefHeight="25.0" prefWidth="178.0" />
-      <TextField fx:id="TF2" layoutX="454.0" layoutY="276.0" prefHeight="25.0" prefWidth="178.0" />
-      <TextField fx:id="TF3" layoutX="454.0" layoutY="330.0" prefHeight="25.0" prefWidth="178.0" />
-      <TextField fx:id="TF4" layoutX="454.0" layoutY="386.0" prefHeight="25.0" prefWidth="178.0" />
+      <TextField fx:id="TF1" layoutX="454.0" layoutY="255.0" prefHeight="25.0" prefWidth="178.0" />
+      <TextField fx:id="TF2" layoutX="454.0" layoutY="302.0" prefHeight="25.0" prefWidth="178.0" />
+      <TextField fx:id="TF3" layoutX="454.0" layoutY="349.0" prefHeight="25.0" prefWidth="178.0" />
+      <TextField fx:id="TF4" layoutX="454.0" layoutY="393.0" prefHeight="25.0" prefWidth="178.0" />
       <TextField fx:id="TF5" layoutX="454.0" layoutY="437.0" prefHeight="25.0" prefWidth="178.0" />
       <Label fx:id="L8" layoutX="454.0" layoutY="472.0" prefHeight="17.0" prefWidth="227.0" />
+      <Label fx:id="CodeLabel" layoutX="356.0" layoutY="209.0" prefHeight="27.0" prefWidth="78.0" text="Code" />
+      <TextField fx:id="TF6" layoutX="454.0" layoutY="210.0" prefHeight="25.0" prefWidth="178.0" />
    </children>
 </AnchorPane>

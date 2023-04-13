@@ -19,18 +19,18 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="L3" layoutX="291.0" layoutY="171.0" prefHeight="32.0" prefWidth="42.0" text="Grass" />
-      <Label fx:id="L4" layoutX="291.0" layoutY="227.0" prefHeight="32.0" prefWidth="28.0" text="Hay" />
-      <Label fx:id="L5" layoutX="291.0" layoutY="276.0" prefHeight="32.0" prefWidth="42.0" text="Silage" />
-      <Label fx:id="L6" layoutX="291.0" layoutY="328.0" prefHeight="32.0" prefWidth="28.0" text="Bran" />
-      <Label fx:id="L7" layoutX="291.0" layoutY="378.0" prefHeight="32.0" prefWidth="49.0" text="Molasses" />
+      <Label fx:id="L3" layoutX="291.0" layoutY="207.0" prefHeight="32.0" prefWidth="42.0" text="Grass" />
+      <Label fx:id="L4" layoutX="291.0" layoutY="256.0" prefHeight="32.0" prefWidth="28.0" text="Hay" />
+      <Label fx:id="L5" layoutX="291.0" layoutY="303.0" prefHeight="32.0" prefWidth="42.0" text="Silage" />
+      <Label fx:id="L6" layoutX="291.0" layoutY="346.0" prefHeight="32.0" prefWidth="28.0" text="Bran" />
+      <Label fx:id="L7" layoutX="294.0" layoutY="394.0" prefHeight="32.0" prefWidth="49.0" text="Molasses" />
       <BorderPane layoutY="86.0" prefHeight="525.0" prefWidth="215.0" style="-fx-background-color: silver;" />
-      <TextField fx:id="TF1" layoutX="373.0" layoutY="175.0" prefHeight="25.0" prefWidth="195.0" />
-      <TextField fx:id="TF2" layoutX="373.0" layoutY="230.0" prefHeight="25.0" prefWidth="195.0" />
-      <TextField fx:id="TF3" layoutX="373.0" layoutY="279.0" prefHeight="25.0" prefWidth="195.0" />
-      <TextField fx:id="TF4" layoutX="373.0" layoutY="331.0" prefHeight="25.0" prefWidth="195.0" />
-      <TextField fx:id="TF5" layoutX="373.0" layoutY="381.0" prefHeight="25.0" prefWidth="195.0" />
-      <Button fx:id="SubmitButton" layoutX="433.0" layoutY="432.0" mnemonicParsing="false" onAction="#SubmitButtonAction" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: green;" text="Submit" textFill="#fdfdfd">
+      <TextField fx:id="TF1" layoutX="373.0" layoutY="210.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="TF2" layoutX="373.0" layoutY="259.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="TF3" layoutX="373.0" layoutY="306.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="TF4" layoutX="373.0" layoutY="349.0" prefHeight="25.0" prefWidth="195.0" />
+      <TextField fx:id="TF5" layoutX="373.0" layoutY="397.0" prefHeight="25.0" prefWidth="195.0" />
+      <Button fx:id="SubmitButton" layoutX="433.0" layoutY="455.0" mnemonicParsing="false" onAction="#SubmitButtonAction" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: green;" text="Submit" textFill="#fdfdfd">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -38,6 +38,8 @@
       <Button fx:id="BackButton" layoutX="326.0" layoutY="519.0" mnemonicParsing="false" onAction="#BackButtonAction" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: lightgreen;" text="Back" />
       <Button fx:id="ExitButton" layoutX="523.0" layoutY="519.0" mnemonicParsing="false" onAction="#ExitButtonAction" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: red;" text="Exit" />
       <Button fx:id="NextButton" layoutX="426.0" layoutY="523.0" mnemonicParsing="false" onAction="#NextButtonAction" prefHeight="32.0" prefWidth="75.0" text="Next" />
-      <Label fx:id="L8" layoutX="359.0" layoutY="410.0" prefHeight="17.0" prefWidth="224.0" />
+      <Label fx:id="L8" layoutX="359.0" layoutY="431.0" prefHeight="17.0" prefWidth="224.0" />
+      <Label fx:id="L9" layoutX="291.0" layoutY="166.0" prefHeight="25.0" prefWidth="28.0" text="Code" />
+      <TextField fx:id="TF6" layoutX="373.0" layoutY="166.0" prefHeight="25.0" prefWidth="195.0" />
    </children>
 </AnchorPane>

@@ -15,6 +15,7 @@ import javafx.scene.control.TextArea;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CowHealthController2 {
 
@@ -69,6 +70,7 @@ public class CowHealthController2 {
     @FXML
     private TextField TF3;
 
+
     @FXML
     void BackButtonAction(ActionEvent event) throws IOException {
         root = FXMLLoader.load(CowHealth2.class.getResource("CowHealth.fxml"));
@@ -96,11 +98,7 @@ public class CowHealthController2 {
         }
         else {
             FileWriter fw = new FileWriter(file, true);
-            fw.write("Code : " + code + "\n");
-            fw.write("Date : " + date + "\n");
-            fw.write("Next Date : " + nextdate + "\n");
-            fw.write("Description : "+des+"\n");
-            fw.write("--------\n");
+            fw.write(code+" "+date+" "+nextdate+" "+des+"\n");
             fw.close();
             L7.setText("     Submission has Completed");
         }
